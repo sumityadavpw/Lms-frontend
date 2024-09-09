@@ -4,17 +4,14 @@ import CourseCard from "../../Components/CourseCard";
 import HomeLayout from "../../Layouts/HomeLayout";
 import { getAllCourses } from "../../Redux/Slices/CourseSlice";
 
-function Courses ()  {
+const Courses = () => {
   const dispatch = useDispatch();
-
   const { coursesData } = useSelector((state) => state.course);
 
-  async function loadCourses() {
-    await dispatch(getAllCourses());
-  }
-
-  useEffect(() => {
-    loadCourses();
+  useEffect (() => {
+    (async () => {
+      await dispatch(getAllCourses());
+    }) ();
   }, []);
 
   return (
@@ -32,7 +29,7 @@ function Courses ()  {
                         })}
                     </div>
                 
-
+                 
             </div>
         </HomeLayout>
   );
