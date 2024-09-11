@@ -8,11 +8,15 @@ const Courses = () => {
   const dispatch = useDispatch();
   const { coursesData } = useSelector((state) => state.course);
 
-  useEffect (() => {
-    (async () => {
-      await dispatch(getAllCourses());
-    }) ();
+  async function loadCourses() {
+    await dispatch(getAllCourses()); 
+    
+  }
+
+  useEffect(() => {
+      loadCourses();
   }, []);
+
 
   return (
         <HomeLayout>
