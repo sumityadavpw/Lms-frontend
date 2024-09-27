@@ -1,9 +1,18 @@
-import React from "react";
+import { useEffect } from "react";
 import HomeLayout from "../../Layouts/HomeLayout";
 import { AiFillCheckCircle} from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getUserData } from "../../Redux/Slices/AuthSlice";
 
 function CheckoutSuccess() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUserData());
+    })
+
+
     return (
         <HomeLayout>
             <div className="min-h-[90vh] flex items-center justify-center text-white">
