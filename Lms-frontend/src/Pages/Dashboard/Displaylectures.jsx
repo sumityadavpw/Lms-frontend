@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import HomeLayout from "../../Layouts/HomeLayout";
 
-
 const DisplayLectures = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
