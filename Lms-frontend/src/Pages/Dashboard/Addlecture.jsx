@@ -125,7 +125,7 @@ const AddLectures = () => {
             )}
 
             <button className="btn-primary py-1 font-semibold text-lg">
-              Add Lecture
+              Add New Lecture
             </button>
           </form>
         </div>
